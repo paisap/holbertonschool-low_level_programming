@@ -2,10 +2,10 @@
 #include <string.h>
 
 int main(void){
-  char str[53];
   
-  strcpy(str ,"\"Programming is like building a multilingual puzzle");
-  puts(str);
+  
+  puts("\"Programming is like building a multilingual puzzle");
+  
   
   return 0;
 }
