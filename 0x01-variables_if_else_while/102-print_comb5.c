@@ -14,13 +14,22 @@ int main(void)
 		{
 			for (c = a; c < 58; c++)
 			{
-				for (d = b + 1; d < 58; d++)
+				if (c != a)
+				{
+					d = 48;
+				}
+				else
+				{
+					d = b + 1;
+				}
+				for (; d < 58; d++)
 				{
 					putchar(a);
 					putchar(b);
 					putchar(' ');
 					putchar(c);
 					putchar(d);
+
 					if (a == 57 && b == 56 && c == 57 && d == 57)
 					{
 					}
