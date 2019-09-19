@@ -6,11 +6,14 @@
  */
 int main(void)
 {
-	int a;
+	char alphabet;
 
-	for (a = 48; a < 58; a++)
+	alphabet = 'z';
+
+	while (alphabet >= 'a')
 	{
-	putchar(a);
+	putchar(alphabet);
+	alphabet--;
 	}
 	putchar('\n');
 	return (0);
