@@ -15,5 +15,5 @@ int main(void)
 	x += a;
 	}
 	}
-	pritnf("%d", x);
+	printf("%d\n", x);
 }
