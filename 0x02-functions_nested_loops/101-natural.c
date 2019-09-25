@@ -8,11 +8,12 @@ int main(void)
 {
 	int x, a;
 
+	x = 0;
 	for (a = 1; a < 1024; a++)
 	{
-	if ((a % 3) == 0 || (a % 5) == 0)
+	if ((a % 3 == 0) || (a % 5 == 0))
 	{
-	x += a;
+	x = x + a;
 	}
 	}
 	printf("%d\n", x);
