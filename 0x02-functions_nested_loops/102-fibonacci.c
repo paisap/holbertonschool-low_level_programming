@@ -7,30 +7,29 @@
  */
 int main(void)
 {
-long long int x, y, z, cont;
+double x, y, z;
+int i;
 
 x = 0;
 y = 1;
 
 
-for (cont = 1; cont <= 50; cont = cont + 1)
+for (i = 1; i <= 50; i++)
 {
-if (cont == 50)
+if (i == 50)
 {
 z = x + y;
-printf("%lli", z);
+printf("%.f\n", z);
 x = y;
 y = z;
 }
 else
 {
 z = x + y;
-printf("%lli, ", z);
+printf("%.f, ", z);
 x = y;
 y = z;
 }
 }
-printf("\n");
 return (0);
-
 }
