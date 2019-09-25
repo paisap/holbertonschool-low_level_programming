@@ -13,7 +13,7 @@ x = 0;
 y = 1;
 
 
-for (cont = 1; cont <= 50; cont = cont+1)
+for (cont = 1; cont <= 50; cont = cont + 1)
 {
 if (cont == 50)
 {
