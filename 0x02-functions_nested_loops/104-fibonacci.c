@@ -7,29 +7,40 @@
  */
 int main(void)
 {
-double x, y, z;
+unsigned long x, y, z, a, b, c, d, e, f;
 int i;
 
-x = 0;
-y = 1;
-
-
-for (i = 3; i <= 98; i++)
-{
-if (i == 98)
+x = 1;
+y = 2;
+printf("1, 2, ");
+for (i = 0; i < 90; i++)
 {
 z = x + y;
-printf("%.f\n", z);
+printf("%lu, ", (unsigned long) z);
 x = y;
 y = z;
 }
+a = x / 10000000000;
+b = x % 10000000000;
+c = y / 10000000000;
+d = y % 10000000000;
+for (i = 90; i < 96; i++)
+{
+e = a + c;
+f = b + d;
+if (i == 91 || i == 92 || i == 94 || i == 95)
+{
+f = d - 10000000000;
+e = e + 1;
+}
+if (i != 95)
+	printf("%lu%lu, ", (unsigned long) e, (unsigned long) f);
 else
-{
-z = x + y;
-printf("%.f, ", z);
-x = y;
-y = z;
-}
+	printf("%lu%lu\n", (unsigned long) e, (unsigned long) f);
+a = c;
+b = d;
+c = e;
+d = f;
 }
 return (0);
 }
