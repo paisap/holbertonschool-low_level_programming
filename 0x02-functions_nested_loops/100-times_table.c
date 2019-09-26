@@ -71,9 +71,9 @@ void print_times_table(int n)
 				if ((a + i) > 99)
 					mostrar3(a + i);
 				else if ((a + i) > 9)
-					mmostrar2(a + i);
+					mostrar2(a + i);
 				else
-					mostar1(a + i);
+					mostrar1(a + i);
 
 				a = a + i;
 			}
