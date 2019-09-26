@@ -1,7 +1,37 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * times_table - print the table
+ * imprimir1 - Prints "Hello"
+ * @n: The number to be checked
+ */
+void imprimir1(int n)
+{
+	_putchar(',');
+	_putchar(' ');
+	_putchar(' ');
+	_putchar(' ');
+	_putchar('0' + n);
+}
+
+/**
+ * imprimir2 - Prints "Hello"
+ * @n: The number to be checked
+ */
+void imprimir2(int n)
+{
+	int d1, d2;
+
+	d1 = n / 10;
+	d2 = n % 10;
+	_putchar(',');
+	_putchar(' ');
+	_putchar(' ');
+	_putchar('0' + d1);
+	_putchar('0' + d2);
+}
+
+/**
+ * print_times_table - print the table
  * @n: The number to be checked
  */
 void print_times_table(int n)
@@ -19,21 +49,11 @@ int a, b, c, d, e, f;
 			{
 				if (c < 10)
 				{
-					_putchar (',');
-					_putchar (' ');
-					_putchar (' ');
-					_putchar (' ');
-					_putchar ('0' + c);
+					imprimir1(c);
 				}
 				else if (c < 100)
 				{
-					d = c / 10;
-					e = c % 10;
-					_putchar (',');
-					_putchar (' ');
-					_putchar (' ');
-					_putchar ('0' + d);
-					_putchar ('0' + e);
+					imprimir2(c);
 				}
 				else
 				{
@@ -41,13 +61,17 @@ int a, b, c, d, e, f;
 					f = f % 10;
 					d = c / 100;
 					e = c % 10;
-					printf(", %d", c);
+					_putchar (',');
+					_putchar (' ');
+					_putchar ('0' + d);
+					_putchar ('0' + f);
+					_putchar ('0' + e);
 				}
 				c = c + a;
 			}
 			_putchar ('\n');
 			a++;
-			c = a;	
+			c = a;
 		}
 	}
 }
