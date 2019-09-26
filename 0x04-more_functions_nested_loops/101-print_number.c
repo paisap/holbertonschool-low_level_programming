@@ -6,8 +6,8 @@
  */
 void print_number(int n)
 {
-	int contador, a, b, c, num, t;
-
+	int contador, a, b, c, t;
+	unsigned int num;
 	t = 0;
 	if (n < 0)
 	{
