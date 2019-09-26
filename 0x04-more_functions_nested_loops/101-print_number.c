@@ -28,14 +28,14 @@ void print_number(int n)
 	}
 	for (c = 0; c < contador; c++)
 	{
-		if ( t == 1)
+		if (t == 1)
 		{
-			_putchar('-');
+			_putchar(45);
 			t++;
 		}
 	_putchar('0' + (n / b));
 	n = n % b;
 	b = b / 10;
 	}
-	
+
 }
