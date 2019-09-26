@@ -1,8 +1,9 @@
 #include "holberton.h"
+
 /**
  * print_number - function that draws a straight line in the terminal.
  * @n: The number to be checked
- *
+ * Return: (void)
  */
 void print_number(int n)
 {
@@ -19,7 +20,7 @@ void print_number(int n)
 	}
 	if (a / 10)
 	{
-		print_number1(a / 10);
+		print_number(a / 10);
 	}
-	_putchar('0' + (a % 10));
+	_putchar((a % 10) + '0');
 }
