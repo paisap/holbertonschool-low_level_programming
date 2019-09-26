@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
  * imprimir1 - Prints "Hello"
  * @n: The number to be checked
