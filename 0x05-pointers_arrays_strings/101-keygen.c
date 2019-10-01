@@ -24,4 +24,5 @@ int main(void)
 			c = x;
 		}
 	}
+	return (0);
 }
