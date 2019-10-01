@@ -1,28 +1,30 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
+
 /**
- * main - check the code for Holberton School students.
- *
- * Return: x
- */
+* main - Entry point
+*
+* Return: Always 0 (Success)
+*/
 
 int main(void)
 {
-	int x, c;
+	int num, acu = 2772;
 
-	x = 2772;
 	srand(time(NULL));
-	c = 32 + rand() % (126 - 32);
-	while (x != 0)
+	num = 32 + rand() % (126 - 32);
+
+	while (acu != 0)
 	{
-		printf("%c", c);
-		x = x - c;
-		c = 32 + rand() % (126 - 32);
-		if (x < 126 && x > 32)
+		printf("%c", num);
+		acu = acu - num;
+		num = 32 + rand() % (126 - 32);
+		if (acu < 126 && acu > 32)
 		{
-			c = x;
+			num = acu;
 		}
 	}
+
 	return (0);
 }
