@@ -10,19 +10,19 @@
 
 int main(void)
 {
-	int a, x = 2772;
+	int num, acu = 2772;
 
 	srand(time(NULL));
-	a = 32 + rand() % (126 - 32);
+	num = 32 + rand() % (126 - 32);
 
 	while (acu != 0)
 	{
 		printf("%c", num);
-		x = x - a;
-		a = 32 + rand() % (126 - 32);
-		if (x < 126 && x > 32)
+		acu = acu - num;
+		num = 32 + rand() % (126 - 32);
+		if (acu < 126 && acu > 32)
 		{
-			a = x;
+			num = acu;
 		}
 	}
 
