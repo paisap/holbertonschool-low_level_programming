@@ -9,4 +9,5 @@ char *_strncpy(char *dest, char *src, int n);
 int _putchar(char c);
 char *cap_string(char *);
 char *leet(char *);
+char *rot13(char *);
 #endif
