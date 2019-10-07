@@ -14,10 +14,14 @@ char *_strpbrk(char *s, char *accept)
 		while (accept[b])
 		{
 			if (s[a] == accept[b])
-				return (s + a);
+			{
+				s = (s + a);
+				return (s);
+			}
 			b++;
 		}
 		a++;
 	}
-	return (s + a);
+	s = 0;
+	return (s);
 }
