@@ -6,7 +6,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int x = 0, b = 0, c = 0, t = 0;
+	int x = 0, b = 0, c = 0, t = 0, n = 0;
 
 	while (haystack[x] != '\0' && needle[b] != '\0')
 	{
@@ -17,6 +17,7 @@ char *_strstr(char *haystack, char *needle)
 			x++;
 			c++;
 			b++;
+			n++;
 		}
 		else
 		{
@@ -24,7 +25,7 @@ char *_strstr(char *haystack, char *needle)
 			b = 0;
 		}
 	}
-	if (b == c)
+	if (n == c)
 		haystack = (haystack + t);
 	else
 		haystack = 0;
