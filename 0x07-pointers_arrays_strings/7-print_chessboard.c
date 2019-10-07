@@ -1,8 +1,7 @@
 #include "holberton.h"
 /**
- * print_diagsums - function that  concatenates two strings.
+ * print_chessboard - function that  concatenates two strings.
  * @a: The first string
- * @size: The string concatenates
  */
 void print_chessboard(char (*a)[8])
 {
