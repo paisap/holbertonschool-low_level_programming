@@ -6,9 +6,13 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int x = 0, b = 0, c = 0, t = 0, n = 0;
+	int x = 0, b = 0, c = 0, t = 0, n = 0, a = 0;
 
-	while (haystack[x] != '\0' && needle[b] != '\0')
+	while (needle[a])
+		a++;
+	if (a == 0)
+		return (haystack);
+	while (haystack[x])
 	{
 		if (haystack[x] == needle[b])
 		{
