@@ -6,12 +6,13 @@
  */
 char *_strchr(char *s, char c)
 {
-	int x, t = 0;
+	int x = 0, t;
 
-	x = 0;
 	while (s[x])
+	{
 		x++;
-	for (; t <= x; t++)
+	}
+	for (t = 0; t <= x; t++)
 	{
 		if (s[x] == c)
 		{
@@ -19,7 +20,9 @@ char *_strchr(char *s, char c)
 			break;
 		}
 		else if (t == x)
+		{
 			s = 0;
+		}
 	}
 	return (s);
 }
