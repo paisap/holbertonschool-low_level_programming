@@ -16,9 +16,10 @@ char *_strchr(char *s, char c)
 		if (s[x] == c)
 		{
 			s = (s + x);
-			return (s);
+			break;
 		}
+		else if (t == x)
+			s = 0;
 	}
-	s = 0;
 	return (s);
 }
