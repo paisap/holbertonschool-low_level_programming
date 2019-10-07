@@ -8,7 +8,7 @@ char *_strstr(char *haystack, char *needle)
 {
 	int x = 0, b = 0, c = 0, t = 0;
 
-	while (haystack[x])
+	while (haystack[x] != '\0' && needle[b] != '\0')
 	{
 		if (haystack[x] == needle[b])
 		{
