@@ -18,15 +18,15 @@ int main(int argc, char *argv[])
 	x = atoi(argv[1]);
 	while (x > 0)
 	{
-		if (x - 25 >= 0)
+		if (x >= 0)
 			x = x - 25;
-		else if (x - 10 >= 0)
+		else if (x >= 0)
 			x = x - 10;
-		else if (x - 5 >= 0)
+		else if (x >= 0)
 			x = x - 5;
-		else if (x - 2 >= 0)
+		else if (x >= 0)
 			x = x - 2;
-		else if (x - 1 >= 0)
+		else if (x >= 0)
 			x = x - 1;
 		i++;
 	}
