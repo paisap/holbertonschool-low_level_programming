@@ -8,24 +8,24 @@
 */
 int main(int argc, char *argv[])
 {
-	int i = 1, j = 0, x = 0;
-	char *s;
+	int i, acu = 0;
+	char *x;
 
-	for (; i < argc ; i++)
+	for (i = 1; i < argc; i++)
 	{
-		s = argv[i];
-		while (s[x])
+		x = argv[i];
+		while (*x)
 		{
-			if (s[x] < 47 || s[x] >= 58)
+			if (*x < 47 || *x > 57)
 			{
 				printf("Error\n");
 				return (1);
 			}
 			x++;
 		}
-		x = 0;
-		j = j + atoi(argv[i]);
+		acu = acu + atoi(argv[i]);
 	}
-	printf("%d\n", j);
+	printf("%d\n", acu);
+
 	return (0);
 }
