@@ -22,7 +22,7 @@ char *argstostr(int ac, char **av)
 		}
 		i++;
 	}
-	r = malloc(acu);
+	r = malloc(acu + 1);
 	i = 0;
 	while (i < ac)
 	{
@@ -37,5 +37,6 @@ char *argstostr(int ac, char **av)
 		m++;
 		i++;
 	}
+	r[acu + 1] = '\0';
 	return (r);
 }
