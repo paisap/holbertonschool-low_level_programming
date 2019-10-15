@@ -10,6 +10,8 @@ char *str_concat(char *s1, char *s2)
 	int x = 0, y = 0, i, m;
 	char *r;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	while (s1[x])
 		x++;
 	while (s2[y])
