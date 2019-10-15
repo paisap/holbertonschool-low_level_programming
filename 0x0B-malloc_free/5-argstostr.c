@@ -20,6 +20,7 @@ char *argstostr(int ac, char **av)
 			acu++;
 			ax++;
 		}
+		acu++;
 		i++;
 	}
 	r = malloc(acu + 1);
