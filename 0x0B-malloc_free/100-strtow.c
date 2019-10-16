@@ -1,133 +1,52 @@
-#include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
-/**
- * _wordcount - count words in a string
- * @s: string to count words
- *
- * Return: number of words in string
- */
-int _wordcount(char *s)
-{
-	int wordflag, count;
-
-	wordflag = 0;
-	count = 0;
-	do {
-		if (wordflag == 0 && *s <= '~' && *s >= '!')
-		{
-			wordflag = 1;
-			count++;
-		}
-
-		if (wordflag && (*s > '~' || *s < '!'))
-		{
-			wordflag = 0;
-		}
-	} while (*s++);
-	return (count);
-}
-/**
- * _wordsize - return the size of word n in the string
- * @s: string to look at
- * @n: which word number to return
- *
- * Return: Length of word n.
- */
-int _wordsize(char *s, int n)
-{
-	int wordflag, size;
-
-	wordflag = 0;
-	size = 0;
-	do {
-		if (wordflag == 0 && *s <= '~' && *s >= '!')
-		{
-			wordflag = 1;
-			n--;
-		}
-		if (wordflag && n == 0 && *s <= '~' && *s >= '!')
-		{
-			size++;
-		}
-
-		if (wordflag && (*s > '~' || *s < '!'))
-		{
-			wordflag = 0;
-		}
-	} while (*s++);
-	return (size);
-}
-/**
- * _cpyarr - copy word into array based on string
- * @s: string to take from
- * @sdest: destination for word
- * @n: word to copy
- */
-void _cpyarr(char *s, char *sdest, int n)
-{
-	int wordflag, i, j;
-
-	wordflag = 0;
-	i = 0;
-	j = 0;
-	do {
-		if (wordflag == 0 && *(s + j) <= '~' && *(s + j) >= '!')
-		{
-			wordflag = 1;
-			n--;
-		}
-		if (wordflag && n == 0 && *(s + j) <= '~' && *(s + j) >= '!')
-		{
-			*(sdest + i) = *(s + j);
-			i++;
-		}
-
-		if (wordflag && (*(s + j) > '~' || *(s + j) < '!'))
-		{
-			wordflag = 0;
-		}
-		j++;
-	} while (*(s + j) != '\0');
-	*(sdest + i) = '\0';
-}
+#include "holberton.h"
 
 /**
- * strtow - Return a pointer to an array of strings
- * @str: string to add
- *
- * Return: pointer to array of strings
+ * strtow - splits strings to words
+ * @str: string to split
+ * Return: pointer to an array of words
  */
+
 char **strtow(char *str)
 {
-	int words, i;
-	char **arr;
+	char **array;
+	int i, j, count, len, k, m;
 
-	if (str == NULL || *str == '\0')
+	count = k = 0;
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
-
-	words = _wordcount(str);
-
-	arr = malloc((words + 1) * sizeof(*arr));
-	if (arr == NULL)
-		return (NULL);
-
-	for (i = 0; i < words; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		*(arr + i) = malloc((_wordsize(str, i + 1) + 1) * sizeof(char));
-		if (*(arr + i) == NULL)
+		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
+			count++;
+	}
+	if (count == 0)
+		return (NULL);
+	array = malloc(((count + 1) * sizeof(char *)));
+	if (array == NULL)
+		return (NULL);
+	for (i = 0; str[i] !=  '\0' && k < count; i++)
+	{
+		if (str[i] != ' ')
 		{
-			for (i = i - 1; i >= 0; i--)
-				free(*(arr + i));
-			free(arr);
-			return (NULL);
-
+			len = 0;
+			j = i;
+			while (str[j] != ' ' && str[j] != '\0')
+				j++, len++;
+			array[k] = malloc((len + 1) * sizeof(char));
+			if (array[k] == NULL)
+			{
+				for (k = k - 1; k >= 0; k++)
+					free(array[k]);
+				free(array);
+				return (NULL);
+			}
+			for (m = 0; m < len; m++, i++)
+				array[k][m] = str[i];
+			array[k++][m] = '\0';
 		}
 	}
-	for (i = 0; i < words; i++)
-	{
-		_cpyarr(str, *(arr + i), i + 1);
-	}
-	*(arr + i) = NULL;
-
-	return (arr);
+	array[k] = NULL;
+	return (array);
 }
