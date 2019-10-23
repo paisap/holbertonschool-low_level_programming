@@ -10,6 +10,7 @@
 int main(int argc, char *argv[])
 {
 	char x;
+	char *p;
 
 	if (argc != 4)
 	{
@@ -17,7 +18,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	x = *argv[2];
-	if (x != 43 && x != 45 && x != '*' && x != 47 && x != 37)
+	p = argv[2];
+	if ((x != 43 && x != 45 && x != '*' && x != 47 && x != 37) || p[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
