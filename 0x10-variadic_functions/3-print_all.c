@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include "variadic_functions.h"
 /**
  * p_str - print string
  * @list: list
@@ -47,6 +46,19 @@ void p_int(va_list list)
  */
 void print_all(const char * const format, ...)
 {
+	/**
+ * struct form - nar.
+ * @op: validator
+ * @f: function
+ *
+ * Description: Longer description
+ */
+	struct form
+		{
+			char op;
+			void (*f)(va_list);
+		};
+
 	struct form ops[] = {
 		{'i', p_int},
 		{'c', p_char},
