@@ -70,7 +70,7 @@ void print_all(const char * const format, ...)
 	char *sc = "";
 
 	va_start(list, format);
-	while (format[i] != '\0' && format[i] != NULL)
+	while (format[i] != '\0' && format != NULL)
 	{
 		j = 0;
 		while (j < 4)
@@ -79,7 +79,7 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", sc);
 				ops[j].f(list);
-				cp = ", ";
+				sc = ", ";
 			}
 			j++;
 		}
