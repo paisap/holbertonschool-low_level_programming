@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include "variadic_functions.h"
 /**
  * p_str - print string
  * @list: list
@@ -42,21 +43,10 @@ void p_int(va_list list)
 /**
  * print_all - suma
  * @format: The first string
- * @...: arguments
+ *
  */
 void print_all(const char * const format, ...)
 {
-/**
- * struct form - Struct op
- *
- * @op: The operator
- * @f: The function associated
- */
-	struct form
-	{
-		char op;
-		void (*f)(va_list);
-	};
 	struct form ops[] = {
 		{'i', p_int},
 		{'c', p_char},
@@ -65,29 +55,23 @@ void print_all(const char * const format, ...)
 	};
 	int i = 0, j = 0;
 	va_list list;
+	char *sc = "";
 
 	va_start(list, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format[i] != NULL)
 	{
+		j = 0;
 		while (j < 4)
 		{
 			if (ops[j].op == format[i])
 			{
+				printf("%s", sc);
 				ops[j].f(list);
-				j = 5;
-				switch (format[i + 1])
-				{
-					case '\0':
-						break;
-					default:
-						printf(", ");
-						break;
-				}
+				cp = ", ";
 			}
 			j++;
 		}
 		i++;
-		j = 0;
 	}
 	printf("\n");
 	va_end(list);
