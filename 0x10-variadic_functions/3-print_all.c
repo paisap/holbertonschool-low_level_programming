@@ -46,7 +46,8 @@ void p_int(va_list list)
  */
 void print_all(const char * const format, ...)
 {
-	/**
+
+/**
  * struct form - nar.
  * @op: validator
  * @f: function
