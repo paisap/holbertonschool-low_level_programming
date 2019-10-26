@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include "variadic_function.h"
 /**
  * sum_them_all - suma
  * @n: The first string
