@@ -1,6 +1,6 @@
 #ifndef VARIADIC_FUNCTION_H
 #define VARIADIC_FUNCTION_H
-
+#include <stdarg.h>
 /**
  * struct forma - nar.
  * @op: validator
