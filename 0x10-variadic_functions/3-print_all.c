@@ -7,7 +7,8 @@
  */
 void p_str(va_list list)
 {
-	char *b = va_arg(list, char *);
+	char *b;
+	b = va_arg(list, char *);
 
 	if (b == NULL)
 		b = "(nil)";
@@ -50,9 +51,9 @@ void print_all(const char * const format, ...)
 		{'f', p_float},
 		{'s', p_str},
 	};
-	int i = 0, j = 0;
-	va_list list;
+	int i = 0, j;
 	char *sc = "";
+	va_list list;
 
 	va_start(list, format);
 	while (format[i] != '\0' && format != NULL)
