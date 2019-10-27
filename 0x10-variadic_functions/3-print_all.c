@@ -7,7 +7,7 @@
  */
 void p_str(va_list list)
 {
-	char *b = va_arg(list, char*);
+	char *b = va_arg(list, char *);
 
 	if (b == NULL)
 		b = "(nil)";
@@ -45,8 +45,8 @@ void p_int(va_list list)
 void print_all(const char * const format, ...)
 {
 	form ops[] = {
-		{'i', p_int},
 		{'c', p_char},
+		{'i', p_int},
 		{'f', p_float},
 		{'s', p_str}
 	};
