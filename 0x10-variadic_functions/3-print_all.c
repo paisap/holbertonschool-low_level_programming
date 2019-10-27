@@ -44,7 +44,7 @@ void p_int(va_list list)
  */
 void print_all(const char * const format, ...)
 {
-	form ops[] = {
+	forma_t ops[] = {
 		{'c', p_char},
 		{'i', p_int},
 		{'f', p_float},
