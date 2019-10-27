@@ -10,10 +10,7 @@ void p_str(va_list list)
 	char *b = va_arg(list, char*);
 
 	if (b == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
+		b = "(nil)";
 	printf("%s", b);
 }
 /**
