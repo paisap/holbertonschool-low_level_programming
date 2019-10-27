@@ -8,7 +8,7 @@
  *
  * Description: Longer description
  */
-struct forma
+typedef struct forma
 {
 	char op;
 	void (*f)(va_list);
