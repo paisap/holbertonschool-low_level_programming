@@ -1,0 +1,25 @@
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+/**
+ * free_list - writes the character c to stdout
+ * @head: The character to print
+ *
+ * Return: list
+ */
+void free_list(list_t *head)
+{
+	list_t *tmp;
+
+	while (head != NULL)
+	{
+		tmp = head;
+		free(head->str);
+		free(head);
+		head = tmp->next;
+	}
+	free(head);
+}
+
