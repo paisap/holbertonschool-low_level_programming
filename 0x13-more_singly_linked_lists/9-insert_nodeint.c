@@ -4,9 +4,10 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * *add_node_end - writes the character c to stdout
+ * *insert_nodeint_at_index - writes the character c to stdout
  * @head: The character to print
- * @str: name
+ * @idx: name
+ * @n: new nodo
  *
  * Return: list
  */
@@ -23,7 +24,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	tmp = *head;
 	while (tmp != NULL)
 	{
-		if ( t == idx)
+		if (t == idx)
 		{
 			aux->next = tmp->next;
 			tmp->next = aux;
