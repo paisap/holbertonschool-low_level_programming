@@ -4,33 +4,40 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * *add_node_end - writes the character c to stdout
+ * delete_nodeint_at_index - writes the character c to stdout
  * @head: The character to print
- * @str: name
+ * @index: name
  *
- * Return: list
+ * Return: number
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *aux;
-	listint_t *tmp;
-	listint_t *tmp2;
-	unsigned int t = 0;
+	listint_t *delete;
+	unsigned int i = 0;
 
 	aux = *head;
-	while (aux != NULL)
+	if ((*head) == NULL)
+		return (-1);
+	if (index == 0)
 	{
-		if (t < index)
-			tmp = aux;
-		if (t == index)
-		{
-			tmp2 = aux;
-			free(aux);
-			tmp->next = tmp2->next;
-			return (1);
-		}
-		t++;
+		aux = (*head);
+		(*head) = (*head)->next;
+		free(aux);
+		return (1);
+	}
+	while (i < (index - 1) && aux->next)
+	{
 		aux = aux->next;
+		i++;
+	}
+	if (i == (index - 1))
+	{
+		delete = aux->next;
+		aux->next = delete->next;
+		free(delete);
+		return (1);
 	}
 	return (-1);
+
 }
