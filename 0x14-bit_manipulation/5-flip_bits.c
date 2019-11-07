@@ -6,15 +6,15 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int t = 0;
+	unsigned long int t = 0, x = 0;
 
 	t = n ^ m;
 
 	while (t > 0)
 	{
-		if ((aux & 1) == 1)
-			c++;
-		aux = aux >> 1;
+		if ((t & 1) == 1)
+			x++;
+		t = t >> 1;
 	}
-	return (c);
+	return (x);
 }
