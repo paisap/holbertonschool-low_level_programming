@@ -6,29 +6,10 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int aux = 1073741824, b = 0;
-	unsigned long int t = 0;
-	int x = 0;
-
-	if (n == t)
-	{
+	if (n > 1)
+		print_binary(n>>1);
+	if (n & 1)
+		_putchar('1');
+	else
 		_putchar('0');
-		return;
-	}
-	while (aux != 0)
-	{
-		x = n - aux;
-		if (x >= 0)
-		{
-			b = 1;
-			_putchar('1');
-			n = n - aux;
-		}
-		else
-		{
-			if (b == 1)
-				_putchar('0');
-		}
-		aux = aux * 0.5;
-	}
 }
