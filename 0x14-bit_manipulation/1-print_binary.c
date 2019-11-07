@@ -6,7 +6,7 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int aux = 4096, b = 0;
+	unsigned long int aux = 65536, b = 0;
 	unsigned long int t = 0;
 	int x = 0;
 
