@@ -10,17 +10,17 @@
  */
 int main(int ac, char **av)
 {
-	int p = open(av[2], O_CREAT | O_RDWR | O_TRUNC | O_APPEND, 664);
+	int p = open(av[2], O_CREAT | O_RDWR | O_TRUNC | O_APPEND, 0664);
 	int t = open(av[1], O_RDONLY);
 	char buf[1024];
 	int aux = 1024, aux1 = 0;
 
 	if (ac != 3)
 		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", av[0]), exit(97);
-	if (av[1] == NULL)
+	if (t == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 	if (p == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[2]), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 	while (aux == 1024)
 	{
 		aux = read(t, buf, 1024);
@@ -30,7 +30,7 @@ int main(int ac, char **av)
 			exit(98);
 		}
 		aux1 = write(p, buf, aux);
-		if (aux1 == -1)
+		if (aux1 < aux)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			exit(99);
