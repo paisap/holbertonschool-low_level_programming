@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * create_file - function that draws a straight line in the terminal.
+ * append_txt_to_file - function that draws a straight line in the terminal.
  * @filename: The number to be checked
  * @text_content: a mounth
  *
