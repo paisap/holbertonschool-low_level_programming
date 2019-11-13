@@ -15,7 +15,7 @@ int main(int ac, char **av)
 	int aux = 1024, aux1 = 0;
 
 	if (ac != 3)
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", av[0]), exit(97);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	t = open(av[1], O_RDONLY);
 	if (t == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
@@ -39,13 +39,11 @@ int main(int ac, char **av)
 	}
 	if (close(p) == -1)
 	{
-		close(t);
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", p);
 		exit(100);
 	}
 	if (close(t) == -1)
 	{
-		close(p);
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", t);
 		exit(100);
 	}
