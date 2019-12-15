@@ -1,18 +1,21 @@
 #include "lists.h"
+/**
+ * *add_dnodeint - writes the character c to stdout
+ * @head: The character to print
+ * @n: name
+ *
+ * Return: list
+ */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *aux, new;
+	dlistint_t *aux, *new;
 
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		return (NULL);
-	aux = new;
 	new->n = n;
+	aux = *head;
+	new->next = aux;
 	*head = new;
-	while (aux->next)
-	{
-		 aux = aux->next;
-	}
-
-
-		
+	return (new);
+}
