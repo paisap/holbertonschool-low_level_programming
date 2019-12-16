@@ -1,7 +1,9 @@
 #include "lists.h"
 /**
 * insert_dnodeint_at_index- sum of all the data of a double list
-* @head: pointer to the first element
+* @h: pointer to the first element
+* @idx: el idx
+* @n: new nodo
 *
 * Description: this function sum the data of a double list
 * Return: the sum of all data in the list
