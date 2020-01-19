@@ -15,14 +15,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	new_nodo = malloc(sizeof(hash_node_t));
 	if (new_nodo == NULL)
-		return (0);	
+		return (0);
 	x = key_index((const unsigned char *)key, ht->size);
 	if (x > ht->size)
 		return (0);
-	if (strcmp(ht->array[x]->key, key))
+	if (strcmp(ht->array[x]->key, key) == 0)
 	{
 		free(ht->array[x]->value);
 		ht->array[x]->value = strdup(value);
+		return (1);
 	}
 	new_nodo->value = strdup(value);
 	new_nodo->key = strdup(key);
