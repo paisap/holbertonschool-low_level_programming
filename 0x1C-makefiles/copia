@@ -1,12 +1,6 @@
 #!/usr/bin/python3
 def island_perimeter(grid):
     cont = 0
-    aux = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            if grid[i][j] == 0:
-                if grid[i][j + 1] == 1:
-                    aux += 1
     for i in range(len(grid)):
         for j in range(len(grid[i])):
             if grid[i][j] == 1:
