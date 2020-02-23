@@ -5,25 +5,24 @@
 
 
 def island_perimeter(grid):
-    """ .... """
-    cont = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[0])):
-            if grid[i][j] == 1:
-                cont += chek_cont(i, j, grid)
-    return cont
-
-
-def chek_cont(i, j, grid):
-    cont = 0
-    height = len(grid) - 1
-    width = len(grid[0]) - 1
-    if i - 1 < 0 or grid[i - 1][j] == 0:
-        cont += 1
-    if i + 1 > height or grid[i + 1][j] == 0:
-        cont += 1
-    if j - 1 < 0 or grid[i][j - 1] == 0:
-        cont += 1
-    if j + 1 < width or grid[i][j + 1] == 0:
-        cont += 1
-    return cont
+    perimeter = 0
+    if len(grid) <= 100:
+        for i in range(len(grid)):
+            if len(grid[i]) <= 100:
+                for j in range(len(grid[i])):
+                    if grid[i][j] == 1:
+                        if i == 0 or grid[i - 1][j] == 0:
+                            perimeter += 1
+                        if j == 0 or grid[i][j - 1] == 0:
+                            perimeter += 1
+                        try:
+                            if grid[i][j + 1] == 0:
+                                perimeter += 1
+                        except IndexError:
+                            perimeter += 1
+                        try:
+                            if grid[i + 1][j] == 0:
+                                perimeter += 1
+                        except IndexError:
+                            perimeter += 1
+    return perimeter
